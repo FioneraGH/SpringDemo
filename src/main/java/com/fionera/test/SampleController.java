@@ -9,6 +9,7 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.ResponseBody;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -19,17 +20,22 @@ import java.util.List;
 @Controller
 @PropertySource("classpath:custom.properties")
 public class SampleController {
-    @Autowired
-    FunctionService functionService;
+    private final ApplicationContext applicationContext;
 
-    @Autowired
-    ApplicationContext applicationContext;
+    private final FunctionService functionService;
+
+    private final CustomBean customBean;
 
     @Value("${app.name}")
     String appName;
 
     @Autowired
-    CustomBean customBean;
+    public SampleController(ApplicationContext applicationContext, FunctionService functionService,
+                            CustomBean customBean) {
+        this.applicationContext = applicationContext;
+        this.functionService = functionService;
+        this.customBean = customBean;
+    }
 
     @RequestMapping(value = "/", method = RequestMethod.GET)
     public String index(Model model) {
@@ -48,14 +54,16 @@ public class SampleController {
         return "index";
     }
 
-    @RequestMapping(value = "/{userName}", method = RequestMethod.GET)
-    public String userName(@PathVariable String userName) {
+    @RequestMapping(value = "/hello/{userName}", method = RequestMethod.GET)
+    public
+    @ResponseBody
+    String getUserName(@PathVariable String userName) {
         applicationContext.publishEvent(new DemoEvent(this, customBean.getDate()));
         return functionService.sayHello(userName + " " + this.hashCode());
     }
 
-    @RequestMapping(value = "/json", method = RequestMethod.GET, produces = "application/json;" +
-            "charset=UTF-8")
+    @RequestMapping(value = "/json", produces = "application/json;charset=UTF-8")
+    @ResponseBody
     public TestPojo getJson(Long id, String name) {
         TestPojo testPojo = new TestPojo();
         testPojo.setId(id);
@@ -64,11 +72,7 @@ public class SampleController {
         return testPojo;
     }
 
-    @RequestMapping(value = "/{userName}", method = RequestMethod.DELETE)
-    public String removeUser(@PathVariable String userName) {
-        return userName + " removed";
-    }
-
+    @SuppressWarnings("unused")
     private class TestPojo {
         private Long id;
         private String name;
@@ -78,7 +82,7 @@ public class SampleController {
             return id;
         }
 
-        public void setId(Long id) {
+        void setId(Long id) {
             this.id = id;
         }
 
@@ -86,7 +90,7 @@ public class SampleController {
             return name;
         }
 
-        public void setName(String name) {
+        void setName(String name) {
             this.name = name;
         }
 
@@ -94,7 +98,7 @@ public class SampleController {
             return app;
         }
 
-        public void setApp(String app) {
+        void setApp(String app) {
             this.app = app;
         }
     }

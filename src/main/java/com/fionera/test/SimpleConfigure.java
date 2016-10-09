@@ -15,6 +15,6 @@ class SimpleConfigure
 
     @Override
     public void run(String... strings) throws Exception {
-        System.out.println("I am running " + functionService.sayHello("hahah"));
+        System.out.println("I am running.");
     }
 }
