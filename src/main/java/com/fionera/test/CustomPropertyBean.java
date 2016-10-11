@@ -8,7 +8,7 @@ import org.springframework.stereotype.Component;
  */
 @Component
 @ConfigurationProperties(locations = {"classpath:custom.properties"},prefix = "app")
-public class CustomBean {
+public class CustomPropertyBean {
 
     private String name;
     private String date;

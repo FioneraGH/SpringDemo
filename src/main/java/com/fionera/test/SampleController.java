@@ -24,17 +24,17 @@ public class SampleController {
 
     private final FunctionService functionService;
 
-    private final CustomBean customBean;
+    private final CustomPropertyBean customPropertyBean;
 
     @Value("${app.name}")
     String appName;
 
     @Autowired
     public SampleController(ApplicationContext applicationContext, FunctionService functionService,
-                            CustomBean customBean) {
+                            CustomPropertyBean customPropertyBean) {
         this.applicationContext = applicationContext;
         this.functionService = functionService;
-        this.customBean = customBean;
+        this.customPropertyBean = customPropertyBean;
     }
 
     @RequestMapping(value = "/", method = RequestMethod.GET)
@@ -58,7 +58,7 @@ public class SampleController {
     public
     @ResponseBody
     String getUserName(@PathVariable String userName) {
-        applicationContext.publishEvent(new DemoEvent(this, customBean.getDate()));
+        applicationContext.publishEvent(new DemoEvent(this, customPropertyBean.getDate()));
         return functionService.sayHello(userName + " " + this.hashCode());
     }
 
