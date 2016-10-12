@@ -20,6 +20,7 @@ public class Person {
     private String address;
 
     public Person() {
+        super();
     }
 
     public Person(String name, Integer age) {

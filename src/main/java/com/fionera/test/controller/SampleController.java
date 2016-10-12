@@ -66,45 +66,4 @@ public class SampleController {
         applicationContext.publishEvent(new DemoEvent(this, customPropertyBean.getDate()));
         return functionService.sayHello(userName + " " + this.hashCode());
     }
-
-    @RequestMapping(value = "/json", produces = "application/json;charset=UTF-8")
-    @ResponseBody
-    public TestPojo getJson(Long id, String name) {
-        TestPojo testPojo = new TestPojo();
-        testPojo.setId(id);
-        testPojo.setName(name);
-        testPojo.setApp(appName);
-        return testPojo;
-    }
-
-    @SuppressWarnings("unused")
-    private class TestPojo {
-        private Long id;
-        private String name;
-        private String app;
-
-        public Long getId() {
-            return id;
-        }
-
-        void setId(Long id) {
-            this.id = id;
-        }
-
-        public String getName() {
-            return name;
-        }
-
-        void setName(String name) {
-            this.name = name;
-        }
-
-        public String getApp() {
-            return app;
-        }
-
-        void setApp(String app) {
-            this.app = app;
-        }
-    }
 }
