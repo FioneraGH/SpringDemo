@@ -1,4 +1,6 @@
-package com.fionera.test;
+package com.fionera.test.controller;
+
+import com.fionera.test.model.Person;
 
 import org.springframework.http.MediaType;
 import org.springframework.web.bind.annotation.RequestMapping;

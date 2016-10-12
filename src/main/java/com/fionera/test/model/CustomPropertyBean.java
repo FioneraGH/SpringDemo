@@ -1,4 +1,4 @@
-package com.fionera.test;
+package com.fionera.test.model;
 
 import org.springframework.boot.context.properties.ConfigurationProperties;
 import org.springframework.stereotype.Component;

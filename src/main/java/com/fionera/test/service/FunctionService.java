@@ -1,4 +1,4 @@
-package com.fionera.test;
+package com.fionera.test.service;
 
 import org.springframework.stereotype.Service;
 

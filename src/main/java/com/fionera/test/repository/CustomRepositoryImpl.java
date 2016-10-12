@@ -1,4 +1,4 @@
-package com.fionera.test;
+package com.fionera.test.repository;
 
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
@@ -7,8 +7,6 @@ import org.springframework.data.jpa.repository.support.SimpleJpaRepository;
 import java.io.Serializable;
 
 import javax.persistence.EntityManager;
-
-import static com.fionera.test.CustomSpecs.byAuto;
 
 /**
  * Created by fionera on 16-10-11.
@@ -26,6 +24,6 @@ public class CustomRepositoryImpl<T, ID extends Serializable>
 
     @Override
     public Page<T> findByAuto(T example, Pageable pageable) {
-        return findAll(byAuto(entityManager, example), pageable);
+        return findAll(CustomSpecs.byAuto(entityManager, example), pageable);
     }
 }

@@ -1,4 +1,4 @@
-package com.fionera.test;
+package com.fionera.test.repository;
 
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.support.JpaRepositoryFactory;

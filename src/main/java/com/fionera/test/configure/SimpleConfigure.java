@@ -1,4 +1,6 @@
-package com.fionera.test;
+package com.fionera.test.configure;
+
+import com.fionera.test.service.FunctionService;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;

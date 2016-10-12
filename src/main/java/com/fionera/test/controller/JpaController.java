@@ -1,4 +1,7 @@
-package com.fionera.test;
+package com.fionera.test.controller;
+
+import com.fionera.test.repository.PersonRepository;
+import com.fionera.test.model.Person;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;

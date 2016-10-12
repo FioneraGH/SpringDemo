@@ -1,4 +1,4 @@
-package com.fionera.test;
+package com.fionera.test.repository;
 
 import org.springframework.data.jpa.domain.Specification;
 import org.springframework.util.ReflectionUtils;

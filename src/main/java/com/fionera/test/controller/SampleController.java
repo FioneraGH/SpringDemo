@@ -1,4 +1,9 @@
-package com.fionera.test;
+package com.fionera.test.controller;
+
+import com.fionera.test.event.DemoEvent;
+import com.fionera.test.service.FunctionService;
+import com.fionera.test.model.CustomPropertyBean;
+import com.fionera.test.model.Person;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;

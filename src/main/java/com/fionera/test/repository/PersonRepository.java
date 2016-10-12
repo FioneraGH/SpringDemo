@@ -1,6 +1,7 @@
-package com.fionera.test;
+package com.fionera.test.repository;
 
-import org.springframework.data.jpa.repository.JpaRepository;
+import com.fionera.test.model.Person;
+
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.query.Param;
 

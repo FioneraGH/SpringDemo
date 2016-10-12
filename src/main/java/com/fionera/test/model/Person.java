@@ -1,4 +1,4 @@
-package com.fionera.test;
+package com.fionera.test.model;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -8,7 +8,7 @@ import javax.persistence.NamedQuery;
 /**
  * Created by fionera on 16-10-9.
  */
-@Entity
+@Entity()
 @NamedQuery(name = "Person.withNameAndAddressNameQuery",
         query = "select p from Person p where p.name=?1 and p.address=?2")
 public class Person {
