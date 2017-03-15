@@ -13,10 +13,15 @@ import java.io.Serializable;
 import javax.persistence.EntityManager;
 
 /**
+ * CustomRepositoryFactoryBean
  * Created by fionera on 16-10-11.
  */
 public class CustomRepositoryFactoryBean<T extends JpaRepository<S, ID>, S, ID extends Serializable>
         extends JpaRepositoryFactoryBean<T, S, ID> {
+
+    public CustomRepositoryFactoryBean(Class<? extends T> repositoryInterface) {
+        super(repositoryInterface);
+    }
 
     @Override
     protected RepositoryFactorySupport createRepositoryFactory(EntityManager entityManager) {

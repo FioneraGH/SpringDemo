@@ -1,14 +1,11 @@
 package com.fionera.test.controller;
 
 import com.fionera.test.event.DemoEvent;
-import com.fionera.test.service.FunctionService;
-import com.fionera.test.model.CustomPropertyBean;
 import com.fionera.test.model.Person;
+import com.fionera.test.service.FunctionService;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.ApplicationContext;
-import org.springframework.context.annotation.PropertySource;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -17,29 +14,23 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
 
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
 
 /**
+ * SampleController
  * Created by fionera on 16-9-29.
  */
 @Controller
-@PropertySource("classpath:custom.properties")
 public class SampleController {
     private final ApplicationContext applicationContext;
 
     private final FunctionService functionService;
 
-    private final CustomPropertyBean customPropertyBean;
-
-    @Value("${app.name}")
-    String appName;
-
     @Autowired
-    public SampleController(ApplicationContext applicationContext, FunctionService functionService,
-                            CustomPropertyBean customPropertyBean) {
+    public SampleController(ApplicationContext applicationContext, FunctionService functionService) {
         this.applicationContext = applicationContext;
         this.functionService = functionService;
-        this.customPropertyBean = customPropertyBean;
     }
 
     @RequestMapping(value = "/", method = RequestMethod.GET)
@@ -63,7 +54,7 @@ public class SampleController {
     public
     @ResponseBody
     String getUserName(@PathVariable String userName) {
-        applicationContext.publishEvent(new DemoEvent(this, customPropertyBean.getDate()));
+        applicationContext.publishEvent(new DemoEvent(this, new Date().toString()));
         return functionService.sayHello(userName + " " + this.hashCode());
     }
 }
