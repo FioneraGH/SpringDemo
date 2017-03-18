@@ -3,6 +3,7 @@ package com.fionera.test.event;
 import org.springframework.context.ApplicationEvent;
 
 /**
+ * DemoEvent
  * Created by fionera on 16-10-8.
  */
 public class DemoEvent extends ApplicationEvent{

@@ -1,19 +1,10 @@
 package com.fionera.test.model;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.Id;
-import javax.persistence.NamedQuery;
-
 /**
+ * Person
  * Created by fionera on 16-10-9.
  */
-@Entity()
-@NamedQuery(name = "Person.withNameAndAddressNameQuery",
-        query = "select p from Person p where p.name=?1 and p.address=?2")
 public class Person {
-    @Id
-    @GeneratedValue
     private Long id;
     private String name;
     private Integer age;

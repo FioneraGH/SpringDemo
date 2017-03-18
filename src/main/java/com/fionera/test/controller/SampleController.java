@@ -2,7 +2,6 @@ package com.fionera.test.controller;
 
 import com.fionera.test.event.DemoEvent;
 import com.fionera.test.model.Person;
-import com.fionera.test.service.FunctionService;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.ApplicationContext;
@@ -25,12 +24,9 @@ import java.util.List;
 public class SampleController {
     private final ApplicationContext applicationContext;
 
-    private final FunctionService functionService;
-
     @Autowired
-    public SampleController(ApplicationContext applicationContext, FunctionService functionService) {
+    public SampleController(ApplicationContext applicationContext) {
         this.applicationContext = applicationContext;
-        this.functionService = functionService;
     }
 
     @RequestMapping(value = "/", method = RequestMethod.GET)
@@ -55,6 +51,6 @@ public class SampleController {
     @ResponseBody
     String getUserName(@PathVariable String userName) {
         applicationContext.publishEvent(new DemoEvent(this, new Date().toString()));
-        return functionService.sayHello(userName + " " + this.hashCode());
+        return userName + " " + this.hashCode();
     }
 }
