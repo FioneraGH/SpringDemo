@@ -1,5 +1,6 @@
 package com.fionera.test;
 
+import org.mybatis.spring.annotation.MapperScan;
 import org.springframework.boot.Banner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
@@ -9,6 +10,7 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
  * Created by fionera on 16-10-8.
  */
 @SpringBootApplication
+@MapperScan("com.fionera.test.dao")
 public class Application {
     public static void main(String[] args) {
         SpringApplication app = new SpringApplication(Application.class);
