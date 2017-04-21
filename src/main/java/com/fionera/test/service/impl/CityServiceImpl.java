@@ -25,4 +25,9 @@ public class CityServiceImpl implements CityService {
     public City findCityByName(String cityName) {
         return cityDao.findByName(cityName);
     }
+
+    @Override
+    public boolean addNewCity(City city) {
+        return cityDao.addNewCity(city);
+    }
 }

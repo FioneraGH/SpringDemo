@@ -4,6 +4,7 @@ import com.fionera.test.domain.City;
 import com.fionera.test.service.CityService;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
@@ -26,5 +27,10 @@ public class CityRestController {
     @RequestMapping(value = "/api/city", method = RequestMethod.GET)
     public City findOneCity(@RequestParam(value = "cityName") String cityName) {
         return cityService.findCityByName(cityName);
+    }
+
+    @RequestMapping(value = "/api/city", method = RequestMethod.POST)
+    public boolean addNewCity(@RequestBody City city) {
+        return cityService.addNewCity(city);
     }
 }

@@ -8,4 +8,5 @@ import com.fionera.test.domain.City;
  */
 public interface CityService {
     City findCityByName(String cityName);
+    boolean addNewCity(City city);
 }
