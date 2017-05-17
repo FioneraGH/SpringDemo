@@ -10,5 +10,5 @@ import org.apache.ibatis.annotations.Param;
  */
 public interface CityDao {
     City findByName(@Param("cityName") String cityName);
-    boolean addNewCity(@Param("city") City city);
+    boolean addNewOne(@Param("city") City city);
 }

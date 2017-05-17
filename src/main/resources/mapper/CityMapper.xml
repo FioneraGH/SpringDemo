@@ -18,7 +18,7 @@
         FROM city
         WHERE city_name = #{cityName}
     </select>
-    <insert id="addNewCity" parameterType="City">
+    <insert id="addNewOne" parameterType="City">
         INSERT INTO city (city_id, city_name, description)
         VALUES (#{city.cityId}, #{city.cityName}, #{city.description})
     </insert>

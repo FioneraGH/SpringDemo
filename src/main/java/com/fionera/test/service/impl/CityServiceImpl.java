@@ -28,6 +28,6 @@ public class CityServiceImpl implements CityService {
 
     @Override
     public boolean addNewCity(City city) {
-        return cityDao.addNewCity(city);
+        return cityDao.addNewOne(city);
     }
 }
