@@ -4,9 +4,34 @@
 <mapper namespace="com.fionera.test.dao.ActivityDao">
 
     <select id="selectAll" resultType="Activity">
-        SELECT * FROM activity;
+        SELECT *
+        FROM activity;
     </select>
     <select id="selectById" parameterType="int" resultType="Activity">
-        SELECT * FROM activity WHERE id = #{id};
+        SELECT *
+        FROM activity
+        WHERE id = #{id};
     </select>
+    <insert id="insert" parameterType="Activity">
+        INSERT INTO activity
+        SET
+            title       = #{title},
+            description = #{note},
+            imgPath     = #{imgPath},
+            start_time  = #{startTime},
+            end_time    = #{endTime};
+    </insert>
+    <update id="update" parameterType="Activity">
+        UPDATE activity
+        SET
+            title       = #{title},
+            description = #{note},
+            imgPath     = #{imgPath},
+            start_time  = #{startTime},
+            end_time    = #{endTime};
+    </update>
+    <delete id="deleteById" parameterType="int">
+        DELETE FROM activity
+        WHERE id = #{id};
+    </delete>
 </mapper>

@@ -2,8 +2,6 @@ package com.fionera.test.dao;
 
 import com.fionera.test.domain.Activity;
 
-import org.apache.ibatis.annotations.Param;
-
 import java.util.List;
 
 /**
@@ -13,5 +11,8 @@ import java.util.List;
 public interface ActivityDao {
     List<Activity> selectAll();
 
-    Activity selectById(@Param("id") int id);
+    Activity selectById(int id);
+    void insert(Activity activity);
+    void update(Activity activity);
+    void deleteById(int id);
 }
