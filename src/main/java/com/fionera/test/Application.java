@@ -4,6 +4,7 @@ import org.mybatis.spring.annotation.MapperScan;
 import org.springframework.boot.Banner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.boot.builder.SpringApplicationBuilder;
 
 /**
  * Application
@@ -13,8 +14,8 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 @MapperScan("com.fionera.test.dao")
 public class Application {
     public static void main(String[] args) {
-        SpringApplication app = new SpringApplication(Application.class);
-        app.setBannerMode(Banner.Mode.OFF);
+        SpringApplication app = new SpringApplicationBuilder().sources(Application.class)
+                .bannerMode(Banner.Mode.OFF).build();
         app.run(args);
     }
 }
