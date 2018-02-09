@@ -1,6 +1,6 @@
 server:
   context-path: /test
-  port: 8088
+  port: 38088
 
 spring:
   datasource:
