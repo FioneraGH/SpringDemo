@@ -17,7 +17,7 @@ object deps {
         // runtime
         val springBootTomcatStarter = "org.springframework.boot:spring-boot-starter-tomcat"
 
-        //test
+        // test
         val springBootTestStarter = "org.springframework.boot:spring-boot-starter-test"
     }
 }
