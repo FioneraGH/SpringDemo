@@ -28,7 +28,12 @@ dependencies {
     compile(deps.dependencies.guaua)
     compile(deps.dependencies.druid)
 
-//    compile(kotlin("stdlib-jre8")) // using global spec will cause duplicated versions, which has 1.2.0 from kotlin-dsl
+    /*
+     Using global spec will cause duplicated versions.
+     buildSrc has 1.2.0 from kotlin-dsl.
+     But this has no side effect when we use kotlin in compile scope.
+      */
+    compile(kotlin("stdlib-jre8"))
 
     runtime(deps.dependencies.springBootTomcatStarter)
 

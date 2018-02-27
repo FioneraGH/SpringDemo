@@ -2,7 +2,7 @@ println("running project/build.gradle.kts ...")
 
 plugins {
     base
-    kotlin("jvm") version "1.2.21" apply false // spec kotlin version cause this script running first
+    kotlin("jvm") version deps.plugin.kotlin apply false // spec kotlin version cause this script running first
 }
 
 buildscript {
