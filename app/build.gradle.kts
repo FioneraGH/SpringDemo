@@ -6,6 +6,8 @@ plugins {
     id("application")
     id("org.springframework.boot")
 
+    war
+
     kotlin("jvm")
 }
 
@@ -19,7 +21,7 @@ application {
 }
 
 group = "com.fionera.spring_demo"
-version = "0.0.5-SNAPSHOT"
+version = "0.1.0"
 
 dependencies {
     compile(deps.dependencies.springBootWebStarter)
@@ -35,7 +37,10 @@ dependencies {
       */
     compile(kotlin("stdlib-jdk8"))
 
-    runtime(deps.dependencies.springBootTomcatStarter)
+    /*
+     Plugin "war" provided
+     */
+    providedRuntime(deps.dependencies.springBootTomcatStarter)
 
     testCompile(deps.dependencies.springBootTestStarter)
 }

@@ -11,7 +11,7 @@ import org.springframework.stereotype.Component;
 class SimpleConfigure
         implements CommandLineRunner {
     @Override
-    public void run(String... strings) throws Exception {
+    public void run(String... strings) {
         System.out.println("I am running.");
     }
 }
