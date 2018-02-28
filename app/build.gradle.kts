@@ -33,7 +33,7 @@ dependencies {
      buildSrc has 1.2.0 from kotlin-dsl.
      But this has no side effect when we use kotlin in compile scope.
       */
-    compile(kotlin("stdlib-jre8"))
+    compile(kotlin("stdlib-jdk8"))
 
     runtime(deps.dependencies.springBootTomcatStarter)
 
