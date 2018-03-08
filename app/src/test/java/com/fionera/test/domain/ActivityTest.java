@@ -1,6 +1,6 @@
 package com.fionera.test.domain;
 
-import com.fionera.test.dao.ActivityDao;
+import com.fionera.test.mapper.ActivityMapper;
 
 import org.apache.ibatis.io.Resources;
 import org.apache.ibatis.session.SqlSession;
@@ -34,8 +34,8 @@ public class ActivityTest {
     @Test
     public void test() {
         SqlSession sqlSession = sqlSessionFactory.openSession();
-        ActivityDao activityDao = sqlSession.getMapper(ActivityDao.class);
-        Activity activity = activityDao.selectById(10);
+        ActivityMapper activityMapper = sqlSession.getMapper(ActivityMapper.class);
+        Activity activity = activityMapper.selectById(10);
         if (activity == null) {
             return;
         }
@@ -47,14 +47,14 @@ public class ActivityTest {
     @Test
     public void insert() {
         SqlSession sqlSession = sqlSessionFactory.openSession();
-        ActivityDao activityDao = sqlSession.getMapper(ActivityDao.class);
+        ActivityMapper activityMapper = sqlSession.getMapper(ActivityMapper.class);
         Activity activity = new Activity();
         activity.setTitle("测试插入");
         activity.setNote("插入数据");
         activity.setImgPath("https://www.baidu.com/");
         activity.setStartTime(new Date());
         activity.setEndTime(new Date());
-        activityDao.insert(activity);
+        activityMapper.insert(activity);
         sqlSession.commit();
         sqlSession.close();
     }
@@ -62,8 +62,8 @@ public class ActivityTest {
     @Test
     public void update() {
         SqlSession sqlSession = sqlSessionFactory.openSession();
-        ActivityDao activityDao = sqlSession.getMapper(ActivityDao.class);
-        Activity activity = activityDao.selectById(10);
+        ActivityMapper activityMapper = sqlSession.getMapper(ActivityMapper.class);
+        Activity activity = activityMapper.selectById(10);
         if (activity == null) {
             return;
         }
@@ -71,7 +71,7 @@ public class ActivityTest {
         activity.setNote("更新数据");
         activity.setStartTime(new Date());
         activity.setEndTime(new Date());
-        activityDao.update(activity);
+        activityMapper.update(activity);
         sqlSession.commit();
         sqlSession.close();
     }
@@ -79,8 +79,8 @@ public class ActivityTest {
     @Test
     public void delete() {
         SqlSession sqlSession = sqlSessionFactory.openSession();
-        ActivityDao activityDao = sqlSession.getMapper(ActivityDao.class);
-        activityDao.deleteById(10);
+        ActivityMapper activityMapper = sqlSession.getMapper(ActivityMapper.class);
+        activityMapper.deleteById(10);
         sqlSession.commit();
         sqlSession.close();
     }

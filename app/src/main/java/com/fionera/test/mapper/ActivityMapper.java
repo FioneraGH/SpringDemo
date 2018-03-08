@@ -1,14 +1,14 @@
-package com.fionera.test.dao;
+package com.fionera.test.mapper;
 
 import com.fionera.test.domain.Activity;
 
 import java.util.List;
 
 /**
- * ActivityDao
+ * ActivityMapper
  * Created by fionera on 17-5-17.
  */
-public interface ActivityDao {
+public interface ActivityMapper {
     List<Activity> selectAll();
 
     Activity selectById(int id);

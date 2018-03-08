@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
     "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
-<mapper namespace="com.fionera.test.dao.CityDao">
+<mapper namespace="com.fionera.test.mapper.CityMapper">
     <resultMap id="BaseResultMap" type="com.fionera.test.domain.City">
         <result column="city_id" property="cityId"/>
         <result column="city_name" property="cityName"/>

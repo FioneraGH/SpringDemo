@@ -1,6 +1,6 @@
 package com.fionera.test.service.impl;
 
-import com.fionera.test.dao.CityDao;
+import com.fionera.test.mapper.CityMapper;
 import com.fionera.test.domain.City;
 import com.fionera.test.service.CityService;
 
@@ -14,20 +14,20 @@ import org.springframework.stereotype.Service;
 @Service
 public class CityServiceImpl implements CityService {
 
-    private final CityDao cityDao;
+    private final CityMapper cityMapper;
 
     @Autowired
-    public CityServiceImpl(CityDao cityDao) {
-        this.cityDao = cityDao;
+    public CityServiceImpl(CityMapper cityMapper) {
+        this.cityMapper = cityMapper;
     }
 
     @Override
     public City findCityByName(String cityName) {
-        return cityDao.findByName(cityName);
+        return cityMapper.findByName(cityName);
     }
 
     @Override
     public boolean addNewCity(City city) {
-        return cityDao.addNewOne(city);
+        return cityMapper.addNewOne(city);
     }
 }
