@@ -25,6 +25,7 @@ version = "0.1.0"
 
 dependencies {
     compile(deps.dependencies.springBootWebStarter)
+    compile(deps.dependencies.springBootSecurityStarter)
     compile(deps.dependencies.springBootMyBatisStarter)
     compile(deps.dependencies.mysqlJDBC)
     compile(deps.dependencies.guaua)

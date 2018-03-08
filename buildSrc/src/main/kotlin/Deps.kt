@@ -9,6 +9,7 @@ object deps {
     object dependencies {
         // compile
         val springBootWebStarter = "org.springframework.boot:spring-boot-starter-web:$springBootVersion"
+        val springBootSecurityStarter = "org.springframework.boot:spring-boot-starter-security:$springBootVersion"
         val springBootMyBatisStarter = "org.mybatis.spring.boot:mybatis-spring-boot-starter:1.3.1"
         val mysqlJDBC = "mysql:mysql-connector-java:5.1.45"
         val guaua = "mysql:mysql-connector-java:5.1.45"

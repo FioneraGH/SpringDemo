@@ -1,13 +1,13 @@
 package com.fionera.test.configure;
 
 import org.springframework.boot.CommandLineRunner;
-import org.springframework.stereotype.Component;
+import org.springframework.context.annotation.Configuration;
 
 /**
  * SimpleConfigure
  * Created by fionera on 16-10-8.
  */
-@Component
+@Configuration
 class SimpleConfigure
         implements CommandLineRunner {
     @Override

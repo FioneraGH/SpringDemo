@@ -20,12 +20,11 @@ import java.util.Date;
 public class ActivityTest {
 
     private static SqlSessionFactory sqlSessionFactory;
-    private static Reader reader;
 
     @Before
-    public void setUp() throws Exception {
+    public void setUp() {
         try {
-            reader = Resources.getResourceAsReader("mybatis-config.xml");
+            Reader reader = Resources.getResourceAsReader("mybatis-config.xml");
             sqlSessionFactory = new SqlSessionFactoryBuilder().build(reader);
         } catch (Exception e) {
             e.printStackTrace();
@@ -35,10 +34,11 @@ public class ActivityTest {
     @Test
     public void test() {
         SqlSession sqlSession = sqlSessionFactory.openSession();
-//        Activity activity = sqlSession.selectOne("com.fionera.test.dao.ActivityDao.selectById",
-//                10);
         ActivityDao activityDao = sqlSession.getMapper(ActivityDao.class);
         Activity activity = activityDao.selectById(10);
+        if (activity == null) {
+            return;
+        }
         sqlSession.commit();
         Assert.assertEquals("查找成功", "爱美丽", activity.getTitle());
         sqlSession.close();
@@ -64,6 +64,9 @@ public class ActivityTest {
         SqlSession sqlSession = sqlSessionFactory.openSession();
         ActivityDao activityDao = sqlSession.getMapper(ActivityDao.class);
         Activity activity = activityDao.selectById(10);
+        if (activity == null) {
+            return;
+        }
         activity.setTitle("测试更新");
         activity.setNote("更新数据");
         activity.setStartTime(new Date());
