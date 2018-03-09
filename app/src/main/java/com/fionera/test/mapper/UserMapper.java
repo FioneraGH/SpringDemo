@@ -1,6 +1,6 @@
 package com.fionera.test.mapper;
 
-import com.fionera.test.domain.City;
+import com.fionera.test.domain.User;
 
 import org.apache.ibatis.annotations.Param;
 import org.springframework.stereotype.Repository;
@@ -10,7 +10,6 @@ import org.springframework.stereotype.Repository;
  * Created by fionera on 17-4-10.
  */
 @Repository
-public interface CityMapper {
-    City findByName(@Param("cityName") String cityName);
-    boolean addNewOne(@Param("city") City city);
+public interface UserMapper {
+    User findByName(@Param("username") String username);
 }

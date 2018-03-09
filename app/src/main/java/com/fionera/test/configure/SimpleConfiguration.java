@@ -8,7 +8,7 @@ import org.springframework.context.annotation.Configuration;
  * Created by fionera on 16-10-8.
  */
 @Configuration
-class SimpleConfigure
+class SimpleConfiguration
         implements CommandLineRunner {
     @Override
     public void run(String... strings) {

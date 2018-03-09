@@ -15,6 +15,7 @@ import org.springframework.web.bind.annotation.RestController;
  * Created by fionera on 17-4-20.
  */
 @RestController
+@RequestMapping("/")
 public class CityRestController {
 
     private final CityService cityService;
@@ -24,12 +25,12 @@ public class CityRestController {
         this.cityService = cityService;
     }
 
-    @RequestMapping(value = "/api/city", method = RequestMethod.GET)
+    @RequestMapping(value = "api/city", method = RequestMethod.GET)
     public City findOneCity(@RequestParam(value = "cityName") String cityName) {
         return cityService.findCityByName(cityName);
     }
 
-    @RequestMapping(value = "/api/city", method = RequestMethod.POST)
+    @RequestMapping(value = "api/city", method = RequestMethod.POST)
     public boolean addNewCity(@RequestBody City city) {
         return cityService.addNewCity(city);
     }

@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+    "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.fionera.test.mapper.UserMapper">
+    <resultMap id="BaseResultMap" type="com.fionera.test.domain.User">
+        <result column="user_id" property="userId" />
+        <result column="username" property="username" />
+    </resultMap>
+
+    <select id="findByName" resultMap="BaseResultMap" parameterType="java.lang.String">
+        SELECT
+        user_id,
+        username
+        FROM user
+        WHERE username = #{username}
+    </select>
+</mapper>
