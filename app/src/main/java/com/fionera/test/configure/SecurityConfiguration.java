@@ -39,7 +39,7 @@ public class SecurityConfiguration
     @Override
     protected void configure(HttpSecurity http) throws Exception {
         System.out.println("Enable HttpSecurity Configuration");
-        http.authorizeRequests().antMatchers("/").access("hasRole('ACCESS')").antMatchers("/**")
-                .permitAll().and().formLogin();
+        http.csrf().disable().authorizeRequests().antMatchers("/").permitAll().antMatchers("/**")
+                .access("hasRole('ACCESS')").and().formLogin();
     }
 }
