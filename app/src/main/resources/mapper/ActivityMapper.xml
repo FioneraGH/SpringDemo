@@ -17,7 +17,7 @@
         SET
             title       = #{title},
             description = #{note},
-            img_path     = #{imgPath},
+            img_path    = #{imgPath},
             start_time  = #{startTime},
             end_time    = #{endTime};
     </insert>
@@ -26,7 +26,7 @@
         SET
             title       = #{title},
             description = #{note},
-            img_path     = #{imgPath},
+            img_path    = #{imgPath},
             start_time  = #{startTime},
             end_time    = #{endTime};
     </update>

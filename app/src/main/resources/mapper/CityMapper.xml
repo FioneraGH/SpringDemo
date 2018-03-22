@@ -8,6 +8,7 @@
         <result column="description" property="description"/>
     </resultMap>
 
+    <!--???-->
     <parameterMap id="City" type="com.fionera.test.domain.City"/>
 
     <select id="findByName" resultMap="BaseResultMap" parameterType="java.lang.String">

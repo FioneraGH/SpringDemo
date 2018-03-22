@@ -5,6 +5,7 @@
     <!--设置类别名-->
     <typeAliases>
         <typeAlias alias="Activity" type="com.fionera.test.domain.Activity"/>
+        <typeAlias alias="City" type="com.fionera.test.domain.City"/>
     </typeAliases>
     <!--配置数据源信息及开发环境配置-->
     <environments default="development">
