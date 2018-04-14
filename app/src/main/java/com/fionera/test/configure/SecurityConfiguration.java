@@ -16,7 +16,7 @@ import org.springframework.security.config.annotation.web.configuration
  * SecurityConfiguration
  * Created by fionera on 2018/3/8 in spring_demo.
  */
-@Profile("prod")
+@Profile("dev")
 @Configuration
 @EnableWebSecurity
 public class SecurityConfiguration
@@ -40,6 +40,6 @@ public class SecurityConfiguration
     protected void configure(HttpSecurity http) throws Exception {
         System.out.println("Enable HttpSecurity Configuration");
         http.csrf().disable().authorizeRequests().antMatchers("/").permitAll().antMatchers("/**")
-                .access("hasRole('ACCESS')").and().formLogin();
+                .hasRole("ACCESS").and().formLogin();
     }
 }
