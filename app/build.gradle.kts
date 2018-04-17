@@ -33,7 +33,7 @@ dependencies {
 
     /*
      Using global spec will cause duplicated versions.
-     buildSrc has 1.2.0 from kotlin-dsl.
+     buildSrc has 1.2.0 from kotlin-dsl before, now they are identical.
      But this has no side effect when we use kotlin in compile scope.
       */
     compile(kotlin("stdlib-jdk8"))
