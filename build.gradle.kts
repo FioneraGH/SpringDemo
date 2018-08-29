@@ -7,7 +7,7 @@ plugins {
 
 buildscript {
     repositories {
-        mavenCentral()
+        jcenter()
     }
     dependencies {
         classpath(deps.plugin.springBoot)
@@ -16,7 +16,7 @@ buildscript {
 
 allprojects {
     repositories {
-        mavenCentral()
+        jcenter()
     }
 }
 

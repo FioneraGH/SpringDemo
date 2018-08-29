@@ -21,7 +21,7 @@ application {
 }
 
 group = "com.fionera.spring_demo"
-version = "0.1.0"
+version = "0.1.1"
 
 dependencies {
     compile(deps.dependencies.springBootWebStarter)

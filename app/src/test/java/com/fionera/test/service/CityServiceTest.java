@@ -1,3 +1,4 @@
+package com.fionera.test.service;
 
 import com.fionera.test.Application;
 import com.fionera.test.domain.City;

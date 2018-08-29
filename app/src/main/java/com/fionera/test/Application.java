@@ -8,11 +8,14 @@ import org.springframework.boot.builder.SpringApplicationBuilder;
 
 /**
  * Application
- * Created by fionera on 16-10-8.
+ *
+ * @author fionera
+ * @date 16-10-8
  */
 @SpringBootApplication
 @MapperScan("com.fionera.test.mapper")
 public class Application {
+
     public static void main(String[] args) {
         SpringApplication app = new SpringApplicationBuilder().sources(Application.class)
                 .bannerMode(Banner.Mode.OFF).build();

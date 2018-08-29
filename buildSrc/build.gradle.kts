@@ -1,5 +1,9 @@
 println("running buildSrc/build.gradle.kts ...")
 
+repositories {
+    jcenter()
+}
+
 plugins {
 //    0.14.2 maps to kotlin 1.2.00 within gradle 4.5 rc1
 //    0.15.6 maps to kotlin 1.2.21 within gradle 4.6 rc1
