@@ -2,7 +2,7 @@ object deps {
     val springBootVersion = "1.5.15.RELEASE"
 
     object plugin {
-        val kotlin = "1.2.60"
+        val kotlin = "1.3.10"
         val springBoot = "org.springframework.boot:spring-boot-gradle-plugin:$springBootVersion"
     }
 
